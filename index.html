@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090b12" />
+  <meta name="description" content="An offline-friendly ghost story experience powered by your imagination and open AI." />
+  <title>GHOST//SIGNAL — The Machine Remembers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Ghost Signal home"><span class="brand-mark">◉</span> GHOST<span>//</span>SIGNAL</a>
+    <div class="status"><span class="status-dot"></span><span id="systemStatus">LOCAL MODE READY</span></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="eyebrow-line"></span> AN OPEN-SOURCE AI EXPERIMENT <span class="eyebrow-line"></span></div>
+      <h1>THE MACHINE<br /><em>REMEMBERS.</em></h1>
+      <p class="hero-copy">Every signal leaves an echo. Tell the machine what you found in the dark, and let it turn the fragments into a ghost story.</p>
+      <div class="hero-meta"><span>01 / THE ENCOUNTER</span><span>NO ACCOUNT REQUIRED</span><span>YOUR STORY STAYS YOURS</span></div>
+    </section>
+
+    <section class="workspace" aria-label="Ghost story generator">
+      <div class="panel input-panel">
+        <div class="panel-heading"><span class="step">01</span><div><p class="panel-kicker">TRANSMISSION INPUT</p><h2>What did you hear?</h2></div><span class="cross">✳</span></div>
+        <label for="setting">THE PLACE</label>
+        <select id="setting">
+          <option value="an abandoned university computer lab">Abandoned computer lab</option>
+          <option value="a forgotten railway station at midnight">Forgotten railway station</option>
+          <option value="a family home during a storm">Family home during a storm</option>
+          <option value="a server room where no one works anymore">Silent server room</option>
+          <option value="an old house lit by marigold candles">Old house with marigold candles</option>
+        </select>
+        <label for="clue">THE STRANGE DETAIL <span class="optional">OPTIONAL</span></label>
+        <textarea id="clue" rows="3" maxlength="220" placeholder="A monitor switched on by itself. Someone left a message dated tomorrow..."></textarea>
+        <label for="mood">THE FREQUENCY</label>
+        <div class="mood-options" role="group" aria-label="Choose story mood">
+          <button class="mood active" data-mood="eerie" type="button">EERIE</button>
+          <button class="mood" data-mood="melancholic" type="button">MELANCHOLIC</button>
+          <button class="mood" data-mood="folklore" type="button">FOLKLORE</button>
+        </div>
+        <button id="generateBtn" class="primary-btn" type="button"><span>✦</span> RECEIVE TRANSMISSION <span class="btn-arrow">↗</span></button>
+        <p class="privacy-note"><span>⌁</span> This demo runs in your browser. No story is uploaded.</p>
+      </div>
+
+      <div class="panel output-panel">
+        <div class="panel-heading output-heading"><span class="step">02</span><div><p class="panel-kicker">INCOMING SIGNAL</p><h2 id="outputTitle">Waiting for a signal</h2></div><span class="signal-bars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></div>
+        <div id="storyOutput" class="story-output" aria-live="polite">
+          <div class="empty-state">
+            <div class="ghost-icon">◌</div>
+            <p class="empty-title">THE CHANNEL IS QUIET</p>
+            <p>Choose a place, add a detail, and receive your first transmission.</p>
+            <div class="waveform" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+          </div>
+        </div>
+        <div class="output-footer"><span id="storyCount">TRANSMISSIONS: 00</span><button id="copyBtn" class="text-btn" type="button" disabled>↗ COPY STORY</button></div>
+      </div>
+    </section>
+
+    <section class="manifesto">
+      <div class="manifesto-title"><span class="section-index">03 / WHY OPEN?</span><h2>THE GHOST IS OPEN.<br /><em>THE DATA IS YOURS.</em></h2></div>
+      <div class="manifesto-grid">
+        <article><span class="feature-icon">⌂</span><h3>PRIVATE BY DESIGN</h3><p>Your prompts stay in this browser. With a local model connected, stories can be generated without sending personal memories to a third-party server.</p></article>
+        <article><span class="feature-icon">⟁</span><h3>SWAP THE SPIRIT</h3><p>Open-weight models let builders choose a model, experiment with prompts, and adapt the experience instead of being locked into one provider.</p></article>
+        <article><span class="feature-icon">⌘</span><h3>BUILT TO OUTLIVE</h3><p>Simple HTML, CSS, and JavaScript keep the interface portable. The project can be forked, inspected, and extended by anyone.</p></article>
+      </div>
+      <p class="honesty-note"><span>NOTE FROM THE BUILDER</span> This starter version uses a local story template so it works without internet after loading. It does not claim to run an AI model yet. The README explains how to connect a local open-weight model through Ollama.</p>
+    </section>
+  </main>
+
+  <footer><span>GHOST//SIGNAL © 2026</span><span>BUILT FOR THE OPEN-INNOVATION AFTERLIFE</span><span>END OF TRANSMISSION <b>■</b></span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
